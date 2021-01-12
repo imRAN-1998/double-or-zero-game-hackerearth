@@ -1,0 +1,384 @@
+.container{
+    display: flex;
+}
+.container aside.left{
+    width:22%;
+    height:100vh;
+    /* border:1px solid red; */
+    /* background-image: linear-gradient(-225deg, #2CD8D5 0%, #6B8DD6 48%, #8E37D7 100%); */
+    background-image: linear-gradient(to top left, #2CD8D5 0%, #6B8DD6 48%, #8E37D7 100%);
+}
+.container aside.right{
+    width:78%;
+    height:100vh;
+    /* border:1px solid green; */
+}
+
+
+
+.right .data-table{
+    width:80%;
+    /* border:1px solid green; */
+    margin: 20px auto;
+}
+.data-table .table-heading{
+    display: flex;
+    font-size: 12px;
+    font-weight: bolder;
+}
+.data-table .table-heading .alignment{
+  padding:8px;
+  display: flex;
+  align-items: center;
+  color: white;
+  border-radius: 5px;
+  margin-left:2px;
+  margin-right:2px;
+  background-color: #3457D5;
+}
+.common{
+    justify-content: center;
+    flex:1;
+}
+.player,.profile{
+    flex:2;
+}
+.profile{
+    justify-content: center;
+}
+.price{
+    justify-content: center;
+    flex:2;
+}
+
+.table-data{
+    font-size: 13px;
+    display: flex;
+    /* border: 1px solid lightgray; */
+    border-radius: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    /* box-shadow: 0px 0px  0px rgb(0, 0, 0); */
+
+}
+.table-data.light-blue{
+    background-color: rgb(240, 242, 245);
+}
+.table-data.dark-blue{
+    background-color: rgb(216, 223, 231);
+}
+.table-data:hover{
+    /* box-shadow: 0px 0px  5px rgb(0, 0, 0); */
+    background-color: rgb(189, 194, 199);
+}
+.select{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.select .overlay{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:30px;
+    height:30px;
+    background-color: transparent;
+    cursor: pointer;
+}
+.select,.bet,.win,.los,.name,.image,.userprice{
+    /* padding: 2px; */
+    /* padding-left: 3px ; */
+    margin-left:2px;
+    margin-right:2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.name{
+    justify-content: flex-start;
+    padding-left: 10px;
+}
+.select,.bet,.win,.los{
+    flex:1;
+    /* border: 1px solid red; */
+}
+.name,.image,.userprice{
+    flex: 2;
+    /* border: 1px solid green; */
+}
+.pagination{
+    margin-top: 35px;
+    display: flex;
+    justify-content: flex-end;
+}
+.pagination span{
+    padding:10px;
+}
+
+.pagination span:nth-child(1){
+    background-color: #3457D5;
+    color:white;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.pagination span:nth-child(3){
+    background-color: #3457D5;
+    color:white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.pagination span:nth-child(1):hover,.pagination span:nth-child(3):hover{
+    background-color: #183ab3;
+    cursor: pointer;
+}
+.pagination span:nth-child(1).light,.pagination span:nth-child(3).light{
+    background-color: rgb(216, 223, 231);
+    cursor:auto;
+}
+
+/* .pagination span:nth-child(1) i{
+    color: white;
+} */
+
+.heading{
+    width: 90%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.letter {
+    font-size: 2.5em;
+    display: inline-block;
+    min-width: 0.2em;
+    color: #183ab3;
+    font-weight: 600;
+}
+.heading input[type="text"]{
+    border:none;
+    border-bottom:1px solid #183ab3;
+    outline: none;
+    padding: 5px;
+    color:#8191ca;
+
+}
+
+input[type="text"]::placeholder{
+    color:#8191ca;
+}
+
+@-moz-keyframes dothabottomcheck{
+    0% { height: 0; }
+    100% { height: 12.5px; }
+}
+
+@-webkit-keyframes dothabottomcheck{
+    0% { height: 0; }
+    100% { height: 12.5px; }
+}
+
+@keyframes dothabottomcheck{
+    0% { height: 0; }
+    100% { height: 12.5px;  }
+}
+
+@keyframes dothatopcheck{
+    0% { height: 0; }
+    50% { height: 0; }
+    100% { height: 31.25px; }
+}
+@-webkit-keyframes dothatopcheck{
+    0% { height: 0; }
+    50% { height: 0; }
+    100% { height: 31.25px; }
+}
+@-moz-keyframes dothatopcheck{
+    0% { height: 0; }
+    50% { height: 0; }
+    100% { height: 31.25px; }
+}
+
+input[type=checkbox]{
+    display:none;
+}
+
+.check-box {
+    height: 25px;
+    width: 25px;
+    background-color: transparent;
+    border: 2.5px solid #3457D5;
+    border-radius: 5px;
+    position: relative;
+    display: inline-block;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-transition: border-color ease 0.2s;
+    -o-transition: border-color ease 0.2s;
+    -webkit-transition: border-color ease 0.2s;
+    transition: border-color ease 0.2s;
+    cursor:pointer;
+
+    
+}
+.check-box::before, .check-box::after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    height: 0;
+    width: 5px;
+    background-color: #34b93d;
+    display: inline-block;
+    -moz-transform-origin: left top;
+    -ms-transform-origin: left top;
+    -o-transform-origin: left top;
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    border-radius: 5px;
+    content: ' ';
+    -webkit-transition: opacity ease .5;
+    -moz-transition: opacity ease .5;
+    transition: opacity ease .5;
+}
+
+.check-box::before {
+    top:18px;
+    left: 10.25px;
+    /* box-shadow: 0 0 0 1.25px white; */
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+.check-box::after {
+    top: 9.25px;
+    left: 1.25px;
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+input[type=checkbox]:checked + .check-box,
+.check-box.checked{
+    border-color:#34b93d;
+    
+}
+input[type=checkbox]:checked + .check-box::after,
+.check-box.checked::after{
+    height: 12.5px;
+    -moz-animation: dothabottomcheck 0.2s ease 0s forwards;
+    -o-animation: dothabottomcheck 0.2s ease 0s forwards;
+    -webkit-animation: dothabottomcheck 0.2s ease 0s forwards;
+    animation: dothabottomcheck 0.2s ease 0s forwards;
+}
+    
+input[type=checkbox]:checked + .check-box::before,
+.check-box.checked::before{
+    height: 30px;
+    -moz-animation: dothatopcheck 0.4s ease 0s forwards;
+    -o-animation: dothatopcheck 0.4s ease 0s forwards;
+    -webkit-animation: dothatopcheck 0.4s ease 0s forwards;
+    animation: dothatopcheck 0.4s ease 0s forwards;
+}
+
+
+
+
+
+  /* left side  */
+
+.start{
+    width: 80%;
+    height:70px;
+    margin:10px auto;
+    background-color: white;
+    color: #183ab3;
+    box-shadow: 1px 2px 10px black;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:18px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+.status{
+    color: white;
+    margin: 10px 0 0 20px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.ready-for-game{
+    margin:20px auto;
+    width:95%;
+    /* border:1px solid red; */
+    color:white;
+    height:55%;
+    overflow: auto;
+}
+.ready-for-game::-webkit-scrollbar{
+	width:6px;
+}
+.ready-for-game::-webkit-scrollbar-track {
+  background:transparent; 
+}
+.ready-for-game::-webkit-scrollbar-thumb {
+  background: rgb(255, 255, 255); 
+  border-radius: 5px;
+}
+
+.ready-for-game .ready-player{
+    width:100%;
+    padding:5px;
+    /* border:1px solid green; */
+    display: flex;
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.171);
+}
+.ready-image,.ready-price{
+    flex:1;
+}
+.ready-info{
+    flex:2;
+    display: flex;
+    flex-direction: column;
+}
+.ready-info > div:nth-child(1){
+    margin-bottom: 5px;
+}
+.ready-info div:nth-child(2){
+    display: flex;
+}
+.ready-info div:nth-child(2) div{
+    display: flex;
+    /* border:1px solid red; */
+    align-items: center;
+    margin-right: 15px;
+}
+.ready-info div:nth-child(2) div img{
+    margin-right:2px;
+}
+.ready-price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.design{
+    width:100%;
+    height:20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border:1px solid red; */
+}

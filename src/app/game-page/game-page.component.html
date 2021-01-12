@@ -1,0 +1,30 @@
+<div class="container" *ngIf="close">
+    <aside class="left" [@lists]="players.length">
+        <div *ngFor="let player of players;  let i=index" class="box" 
+        [ngClass]="{
+            'back-1' : i%3==0,
+            'back-2' : i%3==1,
+            'back-3' : i%3==2
+        }">
+            <div class="img">
+                <img [src]="player.image" alt="oops :(" width="50" height="50">
+            </div>
+        </div>
+
+    </aside>
+    <aside class="right">
+        
+        <div class="whole-wheel">
+            <span></span>
+            <div class="wheel">
+                <img src="../../assets/png_files/wheel.png" width="200" height="200" alt="error loading image :(">
+            </div>
+            <div class="go" (click)="spinWheel()">
+                GO!
+            </div>
+        </div>
+    </aside>
+    <div class="back-to-main" (click)="backToMain()">
+        <button>Back</button>
+    </div>
+</div>
