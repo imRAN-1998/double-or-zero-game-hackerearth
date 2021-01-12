@@ -22,14 +22,14 @@ declare var anime: any;
 
 
 export type playerInfo = {
-  uniqueid : Number;
+  uniqueid : number;
   Selected : boolean;
   Name :  string;
   image : String;
   Bet : string;
   Price : string;
-  Win : Number;
-  Lose : Number;
+  Win : number;
+  Lose : number;
   selectTag : boolean;
 }
 
@@ -125,6 +125,15 @@ export class MainPageComponent implements OnInit {
     }
     if(sessionStorage.getItem('gamePlayers')){
       this.playersCheckedForGame = JSON.parse(sessionStorage.getItem('gamePlayers'));
+      this.playersCheckedForGame.forEach(gP=>{
+        this.players.forEach(p=>{
+          if(gP.uniqueid == p.uniqueid){
+            p['Price'] = gP['Price'];
+            p['Win'] = gP['Win'];
+            p['Lose'] = gP['Lose'];
+          }
+        })
+      })
     }else{
       this.playersCheckedForGame = [];
     }
@@ -147,6 +156,9 @@ export class MainPageComponent implements OnInit {
     this.currentPage = 1;
     this.totalPage = this.players.length /10;
   }
+
+
+
   checkBox(event,i,uni_id){  
     console.log(event.checked,i);
     this.tenplayers.forEach((p,index)=>{
@@ -309,6 +321,9 @@ export class MainPageComponent implements OnInit {
       sessionStorage.setItem('gamePlayers',JSON.stringify(this.playersCheckedForGame));
       sessionStorage.removeItem('allplayers');
       sessionStorage.setItem('allplayers',JSON.stringify(this.players));
+      if(this.sT){
+        clearInterval(this.sT);
+      }
       this.players = [];
       this.playersCheckedForGame = [];
       this.tenplayers = [];

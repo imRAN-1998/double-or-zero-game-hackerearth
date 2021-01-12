@@ -4,10 +4,49 @@
         [ngClass]="{
             'back-1' : i%3==0,
             'back-2' : i%3==1,
-            'back-3' : i%3==2
-        }">
+            'back-3' : i%3==2,
+            'player-won' : player.p_status == 'win',
+            'player-lose' : player.p_status == 'lose'
+        }" >
             <div class="img">
                 <img [src]="player.image" alt="oops :(" width="50" height="50">
+            </div>
+            <div class="gplayer-info">
+                <div class="gplayer-name">
+                    {{player.Name}}
+                </div>
+                <div class="gp-i">
+                    <div class="align-class">
+                        <span>
+                            <img src="../../assets/png_files/icons8-coins-96.png" style="margin-right: 5px;" alt="$" width="20" height="20">
+                            {{player.Price}}
+                        </span>
+                        <span>
+                            <img src="../../assets/png_files/win_cup_3.png" alt="$" width="25" height="25">
+                            {{player.Win}}
+                        </span>
+                    </div>
+                    <div class="align-class1">
+                        <span>
+                            <img src="../../assets/png_files/betting-coin.png" style="margin-right: 7px;" alt="$" width="22" height="22">
+                            {{player.Bet}}
+                        </span>
+                        <span>
+                            <svg width="27" height="21" viewBox="0 0 27 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0)">
+                                <path d="M13.5 15.7895L13.4963 15.7844L11.8363 13.5613L13.5 11.3331L13.4963 11.3284L11.8363 9.10496L13.5 6.87716L13.4963 6.87208L12.5689 4.69965C11.6095 2.73106 9.5999 1.08585 7.05162 1.08585C4.90607 1.08585 3.12592 1.98778 1.7061 3.23871C-0.295161 5.00164 -1.10236 8.78196 2.48536 11.5145C4.32879 12.9186 12.5689 19.9141 12.5689 19.9141L11.8361 18.0176L13.5 15.7895Z" fill="#E8594B"/>
+                                <path d="M25.3357 3.23871C23.9294 1.97834 22.1362 1.08585 19.9907 1.08585C17.442 1.08585 15.3904 2.7311 14.431 4.69964L15.3583 6.87207L15.3621 6.87716L13.6983 9.10533L15.3583 11.3284L15.3621 11.3331L13.6983 13.5613L15.3583 15.7844L15.3621 15.7895L13.6983 18.0176L14.431 19.9142C14.431 19.9142 22.734 12.936 24.557 11.5145C28.1093 8.74394 27.2597 4.96288 25.3357 3.23871Z" fill="#AC4439"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0">
+                                <rect width="27" height="21" fill="white"/>
+                                </clipPath>
+                                </defs>
+                                </svg>
+                                {{player.Lose}}                            
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -16,7 +55,7 @@
         
         <div class="whole-wheel">
             <span></span>
-            <div class="wheel">
+            <div class="wheel" #wheel>
                 <img src="../../assets/png_files/wheel.png" width="200" height="200" alt="error loading image :(">
             </div>
             <div class="go" (click)="spinWheel()">
