@@ -87,6 +87,7 @@ export class MainPageComponent implements OnInit, OnDestroy {
   totalPage : number = 0;
   state : boolean = false;
   text = "Double or Zero".split('');
+  fetch : boolean = false;
   public animate() {
     this.sT =setInterval(()=>{
       this.state = !this.state;
@@ -106,7 +107,9 @@ export class MainPageComponent implements OnInit, OnDestroy {
       this.executeInCommon();
       this.checkForMaxPlayersAllowedForGame();
     }else{
+      this.fetch = true;
       this.services1.getData().subscribe(data=>{
+        this.fetch = false;
         console.log('players from api', data);
         data.forEach((d,index)=>{
           this.players.push({
