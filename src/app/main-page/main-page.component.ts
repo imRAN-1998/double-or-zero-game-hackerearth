@@ -13,7 +13,7 @@ import {
   // rubberBandOnEnterAnimation
 } from 'angular-animations';
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { GameServiceService } from "../game-service.service";
 import { Router } from '@angular/router';
@@ -78,7 +78,7 @@ export type playerInfo = {
      rotateInDownLeftOnEnterAnimation({ anchor: 'enterLetterAnim1' }),
   ]
 })
-export class MainPageComponent implements OnInit {
+export class MainPageComponent implements OnInit, OnDestroy {
 
   players : playerInfo[] = [];
   playersCheckedForGame : playerInfo[] = [];
@@ -354,6 +354,12 @@ export class MainPageComponent implements OnInit {
     this.playersPerPage(0,this.playersMatchedBySearch);
 
 
+  }
+  ngOnDestroy(){
+    // console.log('destroy triggered');
+    if(this.sT){
+      clearInterval(this.sT);
+    }
   }
 
 }

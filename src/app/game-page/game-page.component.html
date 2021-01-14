@@ -54,7 +54,9 @@
     <aside class="right">
         
         <div class="whole-wheel">
-            <span></span>
+            <span class="span1" ></span>
+            <span class="span2" #number (click)="removeOverlay()">{{num_value}}</span>
+            <div class="wheel-over" #over (click)="removeOverlay()"></div>
             <div class="wheel" #wheel>
                 <img src="../../assets/png_files/wheel.png" width="200" height="200" alt="error loading image :(">
             </div>
