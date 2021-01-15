@@ -43,6 +43,11 @@ export class GamePageComponent implements OnInit,AfterViewInit,OnDestroy{
   }
 
   ngOnInit(): void {
+    console.log(sessionStorage.getItem('allplayers'));
+    console.log(sessionStorage.getItem('gamePlayers'));
+    if(sessionStorage.getItem('allplayers')==null || sessionStorage.getItem('gamePlayers')==null){
+      this.router.navigate(['/']);
+    }
     console.log('page has appeared')
     setTimeout(()=>{
       if(this.delay){
